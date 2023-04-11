@@ -1,0 +1,20 @@
+name: Push action
+on: push
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Lint
+        run: npm lint
+  test:
+    needs: lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Test
+        run: npm test
+  build:
+    needs: test
+    runs-on: ubuntu-lates
+    steps:
+      - name: Run Build
+        run: npm build
