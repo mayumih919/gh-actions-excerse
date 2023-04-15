@@ -1,8 +1,8 @@
-name: Issues action
+name: Issues Action
 on: issues
 jobs:
   issues:
     runs-on: ubuntu-latest
     steps:
-      - name: Check issues
-        run: echo "${{ toJson(github) }}"
+      - name: Report Issues
+        run: echo "${{ toJSON(github) }}"
